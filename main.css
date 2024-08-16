@@ -12,6 +12,10 @@ nav {
     padding: 0px 20px;
     min-height: 80px;
     background: #1f1f1f;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
 }
 
 nav > a {
@@ -64,13 +68,50 @@ nav ul li a:active {
 }
 
 
+/* Dropdown */
+.dropdown {
+    position: relative;
+}
+
+#services-menu {
+    position: absolute;
+    top: 125%;
+    left: 0px;
+    z-index: 2;
+    padding-left: 16px;
+    background-color: #252525;
+    opacity: 0;  /*transparency*/
+    /*visualable or not */
+    visibility: hidden;
+    /*animation moving to 2% negative y*/
+    transform: translateY(-2vh);
+    transition: opacity 0.3s, transform 0.15s;
+}
+
+#services-menu a {
+    display: block;
+    /*forces the text to stay on one line without wrapping.
+    white-space: normal; (Allows text to wrap normally)
+    white-space: pre-wrap; (Preserves whitespace and line breaks while allowing text to wrap).*/
+    white-space: nowrap;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.dropdown:hover #services-menu {
+    opacity: 1; /*opacity*/
+    visibility: visible;
+    /*change to translate Y positon*/
+    transform: translateY(0);
+}
+
 
 .main-header {
     background-color: #ffffff;
     padding: 20px;
     align-items: center;
     width:65%;
-    height: 500px;
+    height: 1500px;
     margin:auto;
     justify-content: space-between;
     float:left;
@@ -78,7 +119,7 @@ nav ul li a:active {
 
 .sidebar {
     width: 250px;
-    height:500px;
+    height:1500px;
     background-color: #333;
     color: #fff;
     padding: 20px;
@@ -136,4 +177,26 @@ nav ul li a:active {
     border: none;
     border-top: 1px solid #fff; 
     margin: 20px 60px; 
+}
+
+
+
+
+/*back to top button*/
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 18%;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* 마우스 오버 시 효과 */
+.back-to-top:hover {
+    background-color: #555;
 }
